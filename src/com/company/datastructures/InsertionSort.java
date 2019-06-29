@@ -1,5 +1,11 @@
 package com.company.datastructures;
 
+/**
+ * - in-place algorithm
+ * - O(n^2) time complexity - quadratic
+ * - It will take 100 steps to sort 10 items
+ * - Stable algorithm
+ */
 public class InsertionSort {
 
     public static void main(String[] args) {
