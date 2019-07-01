@@ -1,5 +1,7 @@
 package com.company.datastructures;
 
+import java.util.Arrays;
+
 /**
  * - in-place algorithm
  * - O(n^2) time complexity: quadratic
@@ -20,9 +22,7 @@ public class BubbleSort {
             }
         }
 
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
-        }
+        System.out.println(Arrays.toString(array));
 
     }
 
