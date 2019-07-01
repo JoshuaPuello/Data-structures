@@ -2,6 +2,13 @@ package com.company.datastructures;
 
 import java.util.Arrays;
 
+/**
+ * - in-place algorithm
+ * - Difficult to nail down the time complexity because it will depend on the gap.
+ *   Worst case: O(n^2), but it can perform much better than that.
+ * - Doesn't require as much shifting as insertion sort, so it usually performs better.
+ * - Unstable algorithm
+ */
 public class ShellSort {
 
     public static void main(String[] args) {
