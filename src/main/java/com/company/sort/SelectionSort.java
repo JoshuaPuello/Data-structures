@@ -1,25 +1,28 @@
-package com.company.datastructures;
+package com.company.sort;
 
 import java.util.Arrays;
 
 /**
  * - in-place algorithm
- * - O(n^2) time complexity: quadratic
+ * - O(n^2) time complexity - quadratic
  * - It will take 100 steps to sort 10 items
- * - Algorithm degrades quickly
+ * - Doesn't require as much swapping as bubble sort
+ * - Unstable algorithm
  */
-public class BubbleSort {
+public class SelectionSort {
 
     public static void main(String[] args) {
 
         int[] array = { 20, 18, -15, 1, 36, 57, -22 };
 
         for (int lastUnsortedIndex = array.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
-            for (int i = 0; i < lastUnsortedIndex; i++) {
-                if (array[i] > array[i + 1]) {
-                    swap(array, i, i + 1);
+            int largestIndex = 0;
+            for (int i = 0; i <= lastUnsortedIndex; i++) {
+                if (array[i] > array[largestIndex]) {
+                    largestIndex = i;
                 }
             }
+            swap(array, largestIndex, lastUnsortedIndex);
         }
 
         System.out.println(Arrays.toString(array));
@@ -35,4 +38,5 @@ public class BubbleSort {
         array[j] = tmp;
 
     }
+
 }
