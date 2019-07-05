@@ -1,6 +1,7 @@
 package com.company.exercises.arrays;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.IntStream;
 
 /**
@@ -15,13 +16,21 @@ import java.util.stream.IntStream;
  */
 public class TwoNumbersSum {
 
+    public static final int ARRAY_INDEX = 0;
+    public static final int SUM_INDEX = 1;
+
     public static void main(String[] args) {
 
-        int[] array = { 3, 5, -4, 8, 11, 1, -1, 6 };
-        int sum = 10;
+        for (Object[] input : inputs()) {
+            System.out.println(Arrays.toString(twoNumbersSum((int[]) input[ARRAY_INDEX], (int) input[SUM_INDEX])));;
+        }
 
-        System.out.println(Arrays.toString(twoNumbersSum(array, sum)));
+    }
 
+    private static List<Object[]> inputs() {
+        Object[] input1 = new Object[] { new int[] { 3, 5, -4, 8, 11, 1, -1, 6 }, 10, new int[] {-1, 11}};
+        Object[] input2 = new Object[] { new int[] { 3, 5, -4, 8, 11, 1, -1, 6 }, 10, new int[] {-1, 11}};
+        return Arrays.asList(input1, input2);
     }
 
     /**
