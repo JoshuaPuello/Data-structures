@@ -27,8 +27,8 @@ public class TwoNumbersSum {
 
         for (Object[] input : getInputs()) {
             Utils.printAssertEquals(String.valueOf(input[TEST_NAME_INDEX]),
-                    Arrays.toString((int[]) input[EXPECTED_INDEX]),
-                    Arrays.toString(twoNumbersSum((int[]) input[ARRAY_INDEX], (int) input[SUM_INDEX])));
+                    Arrays.toString(twoNumbersSum((int[]) input[ARRAY_INDEX], (int) input[SUM_INDEX])),
+                    Arrays.toString((int[]) input[EXPECTED_INDEX]));
         }
 
     }
