@@ -1,15 +1,15 @@
 ## Bubble Sort
 
-![](src/resources/images/bubbleSort.gif)
+![](src/main/resources/images/bubbleSort.gif)
 
 ## Selection Sort
 
-![](src/resources/images/selectionSort.gif)
+![](src/main/resources/images/selectionSort.gif)
 
 ## Insertion Sort
 
-![](src/resources/images/insertionSort.gif)
+![](src/main/resources/images/insertionSort.gif)
 
 ## Shell Sort
 
-![](src/resources/images/shellSort.gif)
+![](src/main/resources/images/shellSort.gif)
