@@ -1,5 +1,7 @@
 package com.company.exercises.arrays;
 
+import com.company.utils.Utils;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
@@ -16,21 +18,25 @@ import java.util.stream.IntStream;
  */
 public class TwoNumbersSum {
 
-    public static final int ARRAY_INDEX = 0;
-    public static final int SUM_INDEX = 1;
+    private static final int ARRAY_INDEX = 1;
+    private static final int EXPECTED_INDEX = 3;
+    private static final int SUM_INDEX = 2;
+    private static final int TEST_NAME_INDEX = 0;
 
     public static void main(String[] args) {
 
-        for (Object[] input : inputs()) {
-            System.out.println(Arrays.toString(twoNumbersSum((int[]) input[ARRAY_INDEX], (int) input[SUM_INDEX])));;
+        for (Object[] input : getInputs()) {
+            Utils.printAssertEquals(String.valueOf(input[TEST_NAME_INDEX]),
+                    Arrays.toString((int[]) input[EXPECTED_INDEX]),
+                    Arrays.toString(twoNumbersSum((int[]) input[ARRAY_INDEX], (int) input[SUM_INDEX])));
         }
 
     }
 
-    private static List<Object[]> inputs() {
-        Object[] input1 = new Object[] { new int[] { 3, 5, -4, 8, 11, 1, -1, 6 }, 10, new int[] {-1, 11}};
-        Object[] input2 = new Object[] { new int[] { 3, 5, -4, 8, 11, 1, -1, 6 }, 10, new int[] {-1, 11}};
-        return Arrays.asList(input1, input2);
+    private static List<Object[]> getInputs() {
+        Object[] test1 = new Object[] { "Test 1", new int[] { 3, 5, -4, 8, 11, 1, -1, 6 }, 10, new int[] {-1, 11}};
+        Object[] test2 = new Object[] { "Test 2", new int[] { 3, 5, -4, 8, 11, 1, -1, 6 }, 10, new int[] {-1, 11}};
+        return Arrays.asList(test1, test2);
     }
 
     /**
