@@ -35,8 +35,10 @@ public class TwoNumbersSum {
 
     private static List<Object[]> getInputs() {
         Object[] test1 = new Object[] { "Test 1", new int[] { 3, 5, -4, 8, 11, 1, -1, 6 }, 10, new int[] {-1, 11}};
-        Object[] test2 = new Object[] { "Test 2", new int[] { 3, 5, -4, 8, 11, 1, -1, 6 }, 10, new int[] {-1, 11}};
-        return Arrays.asList(test1, test2);
+        Object[] test2 = new Object[] { "Test 2", new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, 17, new int[] {8, 9}};
+        Object[] test3 = new Object[] { "Test 3", new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 15 }, 18, new int[] {3, 15}};
+        Object[] test4 = new Object[] { "Test 4", new int[] { -7, -5, -3, -1, 0, 1, 3, 5, 7 }, -5, new int[] {-5, 0}};
+        return Arrays.asList(test1, test2, test3, test4);
     }
 
     /**
