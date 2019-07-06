@@ -27,7 +27,7 @@ public class TwoNumbersSum {
 
         for (Object[] input : getInputs()) {
             Utils.printAssertEquals(String.valueOf(input[TEST_NAME_INDEX]),
-                    Arrays.toString(twoNumbersSumSorting((int[]) input[ARRAY_INDEX], (int) input[SUM_INDEX])),
+                    Arrays.toString(twoNumbersSumComplement((int[]) input[ARRAY_INDEX], (int) input[SUM_INDEX])),
                     Arrays.toString((int[]) input[EXPECTED_INDEX]));
         }
 
@@ -57,9 +57,9 @@ public class TwoNumbersSum {
             int complementInt = sum - current;
             // if (complement.containsKey(current)) {
             if (IntStream.of(complement).anyMatch(x -> x == current)) {
-                int min = Math.min(current, complementInt);
-                int max = (min == current) ? complementInt : current;
-                return new int[] { min, max };
+                return (current > complementInt) ?
+                        new int[] { complementInt, current } :
+                        new int[] { current, complementInt };
             }
             // complement.put(complementInt, complementInt)
             complement[i] = complementInt;
