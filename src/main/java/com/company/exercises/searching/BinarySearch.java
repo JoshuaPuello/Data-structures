@@ -26,7 +26,7 @@ public class BinarySearch {
         for (Object[] input : getInputs()) {
             int[] array = (int[]) input[ARRAY_INDEX];
             Utils.printAssertEquals(String.valueOf(input[TEST_NAME_INDEX]),
-                    binarySearch(array, (int) input[TARGET_INDEX], 0, array.length - 1),
+                    binarySearchRecursion(array, (int) input[TARGET_INDEX], 0, array.length - 1),
                     (int) input[EXPECTED_INDEX]);
         }
 
@@ -45,13 +45,28 @@ public class BinarySearch {
      * Time complexity O(log(n))
      * Space complexity O(log(n))
      */
-    private static int binarySearch(int[] array, int target, int left, int right) {
+    private static int binarySearchRecursion(int[] array, int target, int left, int right) {
         if (left > right) return -1;
         int middle = (left + right) / 2;
         int current = array[middle];
-        if (current > target) return binarySearch(array, target, left, middle - 1);
-        else if (current < target) return  binarySearch(array, target, middle + 1, right);
+        if (current > target) return binarySearchRecursion(array, target, left, middle - 1);
+        else if (current < target) return  binarySearchRecursion(array, target, middle + 1, right);
         else return middle;
+    }
+
+    /**
+     * Time complexity O(log(n))
+     * Space complexity O(1)
+     */
+    private static int binarySearchIterative(int[] array, int target, int left, int right) {
+        while (left <= right){
+            int middle = (left + right) / 2;
+            int current = array[middle];
+            if (current > target) right = middle - 1;
+            else if (current < target) left = middle + 1;
+            else return middle;
+        }
+        return -1;
     }
 }
 
