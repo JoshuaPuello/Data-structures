@@ -9,4 +9,8 @@ public final class Utils {
         System.out.println("Utils.printAssertEquals | " + result);
     }
 
+    public static void printAssertEquals(String testName, int num1, int num2) {
+        final String result = String.format(stringFormat, testName, num1 == num2 ? "passed \u2611" : "failed \u2612");
+        System.out.println("Utils.printAssertEquals | " + result);
+    }
 }
