@@ -29,10 +29,6 @@ public class ThreeLargestNumbers {
 
     }
 
-    /**
-     * Time complexity 0(n)
-     * Space complexity O(1)
-     */
     private static List<Object[]> getInputs() {
         Object[] test1 = new Object[] { "Test 1", new int[] { 55, 7, 8 }, new int[] { 7, 8, 55 } };
         Object[] test2 = new Object[] { "Test 2", new int[] { 55, 43, 11, 3, -3, 10 }, new int[] { 11, 43, 55 } };
@@ -42,6 +38,10 @@ public class ThreeLargestNumbers {
         return Arrays.asList(test1, test2, test3, test4, test5);
     }
 
+    /**
+     * Time complexity 0(n)
+     * Space complexity O(1)
+     */
     private static int[] updateLargestNumbers(int[] numbers) {
         int[] largestNums = { Integer.MIN_VALUE, Integer.MIN_VALUE, Integer.MIN_VALUE };
 
