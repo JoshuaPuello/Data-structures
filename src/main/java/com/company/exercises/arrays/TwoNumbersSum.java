@@ -18,8 +18,8 @@ import java.util.stream.IntStream;
  */
 public class TwoNumbersSum {
 
-    private static final int ARRAY_INDEX = 1;
-    private static final int EXPECTED_INDEX = 3;
+    private static final int INPUT_INDEX = 1;
+    private static final int EXPECTED_VALUE_INDEX = 3;
     private static final int SUM_INDEX = 2;
     private static final int TEST_NAME_INDEX = 0;
 
@@ -27,8 +27,8 @@ public class TwoNumbersSum {
 
         for (Object[] input : getInputs()) {
             Utils.printAssertEquals(String.valueOf(input[TEST_NAME_INDEX]),
-                    Arrays.toString(twoNumbersSumComplement((int[]) input[ARRAY_INDEX], (int) input[SUM_INDEX])),
-                    Arrays.toString((int[]) input[EXPECTED_INDEX]));
+                    Arrays.toString(twoNumbersSumComplement((int[]) input[INPUT_INDEX], (int) input[SUM_INDEX])),
+                    Arrays.toString((int[]) input[EXPECTED_VALUE_INDEX]));
         }
 
     }

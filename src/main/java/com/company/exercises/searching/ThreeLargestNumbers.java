@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class ThreeLargestNumbers {
 
-    public static final int EXPECTED_INDEX = 2;
+    public static final int EXPECTED_VALUE_INDEX = 2;
     public static final int INPUT_INDEX = 1;
     public static final int TEST_NAME_INDEX = 0;
 
@@ -24,7 +24,7 @@ public class ThreeLargestNumbers {
         for (Object[] input : getInputs()) {
             Utils.printAssertEquals(String.valueOf(input[TEST_NAME_INDEX]),
                     Arrays.toString(updateLargestNumbers((int[]) input[INPUT_INDEX])),
-                    Arrays.toString((int[]) input[EXPECTED_INDEX]));
+                    Arrays.toString((int[]) input[EXPECTED_VALUE_INDEX]));
         }
 
     }

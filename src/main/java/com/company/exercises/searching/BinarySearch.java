@@ -17,17 +17,17 @@ import java.util.List;
 public class BinarySearch {
 
     public static final int TEST_NAME_INDEX = 0;
-    public static final int ARRAY_INDEX = 1;
+    public static final int INPUT_INDEX = 1;
     public static final int TARGET_INDEX = 2;
-    public static final int EXPECTED_INDEX = 3;
+    public static final int EXPECTED_VALUE_INDEX = 3;
 
     public static void main(String[] args) {
 
         for (Object[] input : getInputs()) {
-            int[] array = (int[]) input[ARRAY_INDEX];
+            int[] array = (int[]) input[INPUT_INDEX];
             Utils.printAssertEquals(String.valueOf(input[TEST_NAME_INDEX]),
                     binarySearchRecursion(array, (int) input[TARGET_INDEX], 0, array.length - 1),
-                    (int) input[EXPECTED_INDEX]);
+                    (int) input[EXPECTED_VALUE_INDEX]);
         }
 
     }
