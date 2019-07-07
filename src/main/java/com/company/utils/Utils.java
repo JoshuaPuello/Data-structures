@@ -13,4 +13,9 @@ public final class Utils {
         final String result = String.format(stringFormat, testName, num1 == num2 ? "passed \u2611" : "failed \u2612");
         System.out.println("Utils.printAssertEquals | " + result);
     }
+
+    public static void printAssertEquals(String testName, boolean bool1, boolean bool2) {
+        final String result = String.format(stringFormat, testName, bool1 == bool2 ? "passed \u2611" : "failed \u2612");
+        System.out.println("Utils.printAssertEquals | " + result);
+    }
 }
