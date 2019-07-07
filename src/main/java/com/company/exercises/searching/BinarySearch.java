@@ -32,13 +32,15 @@ public class BinarySearch {
 
     }
 
-    private static List<Object[]> getInputs() {
-        Object[] test1 = new Object[] { "Test 1", new int[] { 0, 1, 21, 33, 45, 45, 61, 71, 72, 73 }, 33, 3 };
-        Object[] test2 = new Object[] { "Test 2", new int[] { 1, 5, 23, 111 }, 111, 3 };
-        Object[] test3 = new Object[] { "Test 2", new int[] { 1, 5, 23, 111 }, 5, 1 };
-        Object[] test4 = new Object[] { "Test 4", new int[] { 0, 1, 21, 33, 45, 45, 61, 71, 72, 73, 355 }, 355, 10 };
-        Object[] test5 = new Object[] { "Test 4", new int[] { 0, 1, 21, 33, 45, 45, 61, 71, 72, 73, 355 }, 354, -1 };
-        return Arrays.asList(test1, test2, test3, test4, test5);
+    private static Object[][] getInputs() {
+        Object[][] tests = {
+                { "Test 1", new int[] { 0, 1, 21, 33, 45, 45, 61, 71, 72, 73 }, 33, 3 },
+                { "Test 2", new int[] { 1, 5, 23, 111 }, 111, 3 },
+                { "Test 2", new int[] { 1, 5, 23, 111 }, 5, 1 },
+                { "Test 4", new int[] { 0, 1, 21, 33, 45, 45, 61, 71, 72, 73, 355 }, 355, 10 },
+                { "Test 4", new int[] { 0, 1, 21, 33, 45, 45, 61, 71, 72, 73, 355 }, 354, -1 }
+        };
+        return tests;
     }
 
     /**

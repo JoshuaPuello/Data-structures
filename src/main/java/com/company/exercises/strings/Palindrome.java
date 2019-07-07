@@ -30,17 +30,19 @@ public class Palindrome {
 
     }
 
-    private static List<Object[]> getInputs() {
-        Object[] test1 = new Object[] { "Test 1", "a", true };
-        Object[] test2 = new Object[] { "Test 2", "ab", false };
-        Object[] test3 = new Object[] { "Test 3", "aba", true };
-        Object[] test4 = new Object[] { "Test 4", "abb", false };
-        Object[] test5 = new Object[] { "Test 5", "abba", true };
-        Object[] test6 = new Object[] { "Test 6", "abcdcba", true };
-        Object[] test7 = new Object[] { "Test 7", "abcdefghhgfedcba", true };
-        Object[] test8 = new Object[] { "Test 8", "abcdefghihgfedcba", true };
-        Object[] test9 = new Object[] { "Test 9", "abcdefghihgfeddcba", false };
-        return Arrays.asList(test1, test2, test3, test4, test5, test6, test7, test8, test9);
+    private static Object[][] getInputs() {
+        Object[][] tests = {
+                { "Test 1", "a", true },
+                { "Test 2", "ab", false },
+                { "Test 3", "aba", true },
+                { "Test 4", "abb", false },
+                { "Test 5", "abba", true },
+                { "Test 6", "abcdcba", true },
+                { "Test 7", "abcdefghhgfedcba", true },
+                { "Test 8", "abcdefghihgfedcba", true },
+                { "Test 9", "abcdefghihgfeddcba", false }
+        };
+        return tests;
     }
 
     /**

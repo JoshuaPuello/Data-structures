@@ -29,13 +29,15 @@ public class ThreeLargestNumbers {
 
     }
 
-    private static List<Object[]> getInputs() {
-        Object[] test1 = new Object[] { "Test 1", new int[] { 55, 7, 8 }, new int[] { 7, 8, 55 } };
-        Object[] test2 = new Object[] { "Test 2", new int[] { 55, 43, 11, 3, -3, 10 }, new int[] { 11, 43, 55 } };
-        Object[] test3 = new Object[] { "Test 3", new int[] { 7, 8, 3, 11, 43, 55 }, new int[] { 11, 43, 55 } };
-        Object[] test4 = new Object[] { "Test 4", new int[] { 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7 }, new int[] { 7, 7, 7 } };
-        Object[] test5 = new Object[] { "Test 5", new int[] { -1, -2, -3, -7, -17, -27, -18, -541, -8, -7, 7 }, new int[] { -2, -1, 7 } };
-        return Arrays.asList(test1, test2, test3, test4, test5);
+    private static Object[][] getInputs() {
+        Object[][] tests = {
+                { "Test 1", new int[] { 55, 7, 8 }, new int[] { 7, 8, 55 } },
+                { "Test 2", new int[] { 55, 43, 11, 3, -3, 10 }, new int[] { 11, 43, 55 } },
+                { "Test 3", new int[] { 7, 8, 3, 11, 43, 55 }, new int[] { 11, 43, 55 } },
+                { "Test 4", new int[] { 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7 }, new int[] { 7, 7, 7 } },
+                { "Test 5", new int[] { -1, -2, -3, -7, -17, -27, -18, -541, -8, -7, 7 }, new int[] { -2, -1, 7 } }
+        };
+        return tests;
     }
 
     /**
