@@ -2,6 +2,8 @@ package com.company.exercises.recursion;
 
 import com.company.utils.Utils;
 
+import java.util.HashMap;
+
 /**
  * The Fibonacci sequence is defined as follows: the first number of the sequence is 0, the second
  * number is 1, and the nth number is the sum of the (n - 1)th and (n - 2)th numbers. Write a function
@@ -20,7 +22,7 @@ public class FIbonacci {
     public static void main(String[] args) {
         for (Object[] input : getInputs()) {
             Utils.printAssertEquals(String.valueOf(input[TEST_NAME_INDEX]),
-                    fibonacciRecursive((int) input[INPUT_INDEX]),
+                    fibonacciIterative((int) input[INPUT_INDEX]),
                     (int) input[EXPECTED_VALUE_INDEX]);
         }
 
@@ -38,9 +40,53 @@ public class FIbonacci {
         return tests;
     }
 
+    /**
+     * Time complexity is O(2^n) due to the two calls executed in almost every step.
+     * Space complexity O(n) due to call stack.
+     */
     private static int fibonacciRecursive(int n) {
         if (n == 2) return 1;
         else if (n == 1) return 0;
         return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+    }
+
+    /**
+     * Time complexity is O(n)
+     * Space complexity is O(n)
+     */
+    private static int fibonacciMemoization(int n) {
+        HashMap<Integer, Integer> memoize = new HashMap<>();
+        memoize.put(1, 0);
+        memoize.put(2, 1);
+        return getNthFib(n, memoize);
+    }
+
+    private static int getNthFib(int n, HashMap<Integer, Integer> memoize) {
+        if (memoize.containsKey(n)) {
+            return memoize.get(n);
+        } else {
+            memoize.put(n, getNthFib(n - 1, memoize) + getNthFib(n - 2, memoize));
+            return memoize.get(n);
+        }
+    }
+
+    /**
+     * Time complexity O(n)
+     * Space complexity O(1)
+     */
+    private static int fibonacciIterative(int n) {
+
+        if (n == 1) return 0;
+        else if (n == 2) return 1;
+
+        int[] pairPrevValues = { 0, 1 };
+
+        for (int i = 3; i <= n; i++) {
+            int newValue = pairPrevValues[0] + pairPrevValues[1];
+            pairPrevValues[0] = pairPrevValues[1];
+            pairPrevValues[1] = newValue;
+        }
+
+        return pairPrevValues[1];
     }
 }
