@@ -32,10 +32,10 @@ public class CaesarCipherEncryptor {
 
     private static Object[][] getInputs() {
         Object[][] tests = {
-                {"Test 1", "abc", 0, "abc"},
-                {"Test 2", "abc", 3, "def"},
-                {"Test 3", "xyz", 2, "zab"},
-                {"Test 4", "abc", 52, "abc"}
+                { "Test 1", "abc", 0, "abc" },
+                { "Test 2", "abc", 3, "def" },
+                { "Test 3", "xyz", 2, "zab" },
+                { "Test 4", "abc", 52, "abc" }
         };
         return tests;
     }
