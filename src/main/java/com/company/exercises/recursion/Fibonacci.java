@@ -13,7 +13,7 @@ import java.util.HashMap;
  * Sample output: 5 (0, 1, 1, 2, 3, 5)
  *
  */
-public class FIbonacci {
+public class Fibonacci {
 
     public static final int TEST_NAME_INDEX = 0;
     public static final int INPUT_INDEX = 1;
