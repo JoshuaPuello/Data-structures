@@ -2,6 +2,8 @@ package com.company.exercises.strings;
 
 import com.company.utils.Utils;
 
+import java.util.HashMap;
+
 /**
  * Write a function that takes in a string and that returns its longest substring without 
  * duplicate characters. Assume that there will only be one longest substring without 
@@ -27,7 +29,7 @@ public class LongestSubstringWithoutDuplication {
     }
 
     private static Object[][] getInputs() {
-        Object[][] tests ={
+        Object[][] tests = {
                 { "Test 1", "a", "a" },
                 { "Test 2", "abc", "abc" },
                 { "Test 3", "abcb", "abc" },
