@@ -20,11 +20,16 @@ import java.util.stream.Stream;
  */
 public class FourNumbersSum {
 
+    private static final int TEST_NAME_INDEX = 0;
+    private static final int INPUT_INDEX = 1;
+    private static final int SUM_INDEX = 2;
+    private static final int EXPECTED_VALUE_INDEX = 3;
+
     public static void main(String[] args) {
         for (Object[] input : getInputs()) {
-            Utils.printAssertEquals(String.valueOf(input[0]),
-                    fourNumbersSum((int[]) input[1], (int) input[2]),
-                    (List<Integer[]>) ((Stream) input[3]).collect(Collectors.toList()));
+            Utils.printAssertEquals(String.valueOf(input[TEST_NAME_INDEX]),
+                    fourNumbersSum((int[]) input[INPUT_INDEX], (int) input[SUM_INDEX]),
+                    (List<Integer[]>) ((Stream) input[EXPECTED_VALUE_INDEX]).collect(Collectors.toList()));
         }
 
     }
