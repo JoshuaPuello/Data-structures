@@ -39,10 +39,10 @@ public class HeapSort {
 
 
     /**
-     * Time complexity: Best case: O(n log(n)) | Worst case: O(n log(n)) | Average case: O(n^2)
+     * Time complexity: Best case: O(n log(n)) | Worst case: O(n log(n)) | Average case: O(n log(n))
      * Space complexity: O(log(n))
      */
-    public static int[] heapSort(int[] array) {
+    private static int[] heapSort(int[] array) {
         buildMaxHeap(array);
         for (int endIdx = array.length - 1; endIdx > 0; endIdx--) {
             swap(0, endIdx, array);
@@ -59,7 +59,9 @@ public class HeapSort {
     }
 
     private static void siftDown(int currentIdx, int endIdx, int[] heap) {
+
         int childOneIdx = currentIdx * 2 + 1;
+
         while (childOneIdx <= endIdx) {
             int childTwoIdx = currentIdx * 2 + 2 <= endIdx ? currentIdx * 2 + 2 : -1;
             int idxToSwap;
