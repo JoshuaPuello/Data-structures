@@ -2,6 +2,9 @@ package com.company.exercises.recursion;
 
 import com.company.utils.Utils;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * Write a function that takes in a non-negative integer n and that returns the number
  * of possible Binary Tree topologies that can be created with exactly n nodes. A Binary
@@ -62,6 +65,65 @@ public class BinaryTreeTopologies {
 
         return numberOfTrees;
 
+    }
+
+    /**
+     * Time complexity: O(n^2)
+     * Space complexity: O(n)
+     */
+    private static int numberOfBinaryTreeTopologiesMap(int n) {
+
+        HashMap<Integer, Integer> cache = new HashMap<Integer, Integer>();
+        cache.put(0, 1);
+
+        return numberOfBinaryTreeTopologiesMap(n, cache);
+    }
+
+    private static int numberOfBinaryTreeTopologiesMap(int n, HashMap<Integer, Integer> cache) {
+
+        if (cache.containsKey(n)) {
+            return cache.get(n);
+        }
+
+        int numberOfTrees = 0;
+
+        for (int leftTreeSize = 0; leftTreeSize < n; leftTreeSize++) {
+            int rightTreeSize = n - 1 - leftTreeSize;
+            int numberOfLeftTrees = numberOfBinaryTreeTopologiesMap(leftTreeSize, cache);
+            int numberOfRightTrees = numberOfBinaryTreeTopologiesMap(rightTreeSize, cache);
+            numberOfTrees += numberOfLeftTrees * numberOfRightTrees;
+        }
+
+        cache.put(n, numberOfTrees);
+
+        return numberOfTrees;
+
+    }
+
+    /**
+     * Time complexity: O(n^2)
+     * Space complexity: O(n)
+     */
+    public static int numberOfBinaryTreeTopologiesList(int n) {
+
+        ArrayList<Integer> cache = new ArrayList<Integer>();
+        cache.add(1);
+
+        for (int m = 1; m < n + 1; m++) {
+
+            int numberOfTrees = 0;
+
+            for (int leftTreeSize = 0; leftTreeSize < m; leftTreeSize++) {
+                int rightTreeSize = m - 1 - leftTreeSize;
+                int numberOfLeftTrees = cache.get(leftTreeSize);
+                int numberOfRightTrees = cache.get(rightTreeSize);
+                numberOfTrees += numberOfLeftTrees * numberOfRightTrees;
+            }
+
+            cache.add(numberOfTrees);
+        }
+
+        return cache.get(n);
     }
 
 }
