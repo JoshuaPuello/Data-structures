@@ -15,14 +15,19 @@ public class Dijkstra {
                     "d", Map.of("finish", 1),
                     "finish", Map.of());
 
-    private static final Map<String, Integer> costs = getCostsTable();
+    private static final Map<String, Integer> costs = getCostsMap();
 
-    private static final Map<String, String> parents = getParentsTable();
+    private static final Map<String, String> parents = getParentsMap();
 
     private static final List<String> processed = new ArrayList<>();
 
     public static void main(String[] args) {
-        String node = findLowestCostNode();
+        String sourceNode = findLowestCostNode();
+        dijkstra(sourceNode);
+        System.out.println(parents.toString());
+    }
+
+    private static void dijkstra(String node) {
         while (node != null) {
             int cost = costs.get(node);
             for (var entry : graph.get(node).entrySet()) {
@@ -35,7 +40,6 @@ public class Dijkstra {
             processed.add(node);
             node = findLowestCostNode();
         }
-        System.out.println(parents.toString());
     }
 
     private static String findLowestCostNode() {
@@ -50,7 +54,7 @@ public class Dijkstra {
         return lowestCostNode;
     }
 
-    private static Map<String, Integer> getCostsTable() {
+    private static Map<String, Integer> getCostsMap() {
         int infinity = Integer.MAX_VALUE;
         return graph.keySet().stream().filter(s -> !s.equals(START_NODE)).collect(Collectors.toMap(
                 key -> key,
@@ -58,7 +62,7 @@ public class Dijkstra {
                 (a, b) -> b));
     }
 
-    private static Map<String, String> getParentsTable() {
+    private static Map<String, String> getParentsMap() {
         return graph.keySet().stream().filter(s -> !s.equals(Dijkstra.START_NODE)).collect(Collectors.toMap(
                 key -> key,
                 key -> (graph.get(Dijkstra.START_NODE).containsKey(key)) ? Dijkstra.START_NODE : ""));
